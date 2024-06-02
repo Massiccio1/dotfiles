@@ -1,0 +1,31 @@
+[init]
+	defaultBranch = master
+[user]
+	name = Massiccio1
+	email = girardellimassimo@gmail.com
+[safe]
+	directory = /shared
+[core]
+	pager = less -FX
+
+[format]
+	pretty = lf
+
+[pretty]
+	lo  = tformat:%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(italic blue)%ad%C(reset) %C(241)%aN%C(reset)
+	lc  =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n
+	lt  =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+
+
+	lf  =  format:%C(auto)%H%C(reset)%C(auto)%d%C(reset)   %C(italic 239)%C(reset)%n%C(white)Author:%C(reset)   %an %C(170)<%ae>%C(reset)%n          %C(italic blue)%aD%C(reset) %C(italic cyan)(%ar)%C(reset)%n%C(white)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+
+
+[alias]
+	ecl = config --edit
+
+	# log, current branch
+	l  = log --pretty=lc --graph
+	ls = log --pretty=lo --graph --date=human --simplify-by-decoration
+	lf = log --pretty=lf --graph
+	ls = log --pretty=lf --graph --cc --stat
+	ll = log --pretty=lf --graph --cc --patch
