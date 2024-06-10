@@ -30,7 +30,8 @@ alias cp2="/usr/bin/cp"
 alias df="df -h"
 alias du="du -d 1 -h"
 alias mkdir='mkdir -p'
-alias mk="mkdir -p"
+alias mk="mkdir"
+alias mkdor="mkdir"
 
 alias testa="echo test alias"
 alias neofetch="fastfetch"
