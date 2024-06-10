@@ -1,7 +1,7 @@
 COMMAND=sudo apt install
 SUDO=$$(which sudo 2>/dev/null)
 
-all:install apt sync
+all:apt install sync
 
 
 .PHONY: config isntall update sunc help test test sudo
