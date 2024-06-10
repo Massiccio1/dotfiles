@@ -1,3 +1,13 @@
+alias alais="alias"
+
+alias gbrc="kate ~/.bashrc 2>/dev/null 1>/dev/null &"
+alias gba="kate ~/.bash_aliases   2>/dev/null 1>/dev/null &"
+alias gzrc="kate ~/.zshrc  2>/dev/null 1>/dev/null &"
+#alias k="kate & 2>/dev/nulìl 1>/dev/null"
+alias ag="alias | grep"
+alias aliaspull="cd $HOME/git/dotfiles && git pull"
+
+
 alias sudokate='SUDO_EDITOR=kate sudoedit'
 
 alias ll='lsd -alFh'
@@ -23,7 +33,8 @@ alias mkdir='mkdir -p'
 alias mk="mkdir -p"
 
 alias testa="echo test alias"
-
+alias neofetch="fastfetch"
+alias ff="fastfetch"
 
 alias root="sudo su -m"
 
@@ -43,14 +54,7 @@ alias less="less -FX"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll="git log --graph --decorate --color --all"
 alias gs="git status"
-alias aliaspull="cd $HOME/git/dotfiles && git pull"
 
-alias gbrc="kate ~/.bashrc 2>/dev/null 1>/dev/null &"
-alias gba="kate ~/.bash_aliases   2>/dev/null 1>/dev/null &"
-alias gzrc="kate ~/.zshrc  2>/dev/null 1>/dev/null &"
-#alias k="kate & 2>/dev/nulìl 1>/dev/null"
-alias ag="alias | grep"
-alias alais="alias"
 
 alias snu="sudo nala update"
 alias sni="sudo nala install -y"

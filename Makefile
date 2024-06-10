@@ -20,11 +20,3 @@ help:
 	@echo \"make install\" install starship zsh and extesions
 	@echo \"make sync\" to sync dotfiles with th repository
 	@echo 
-
-DOT := $(shell command -v ls 2> /dev/null)
-
-test:
-	ifndef DOT
-		$(error "ls is not available please install graphviz")
-	endif
-		ls
