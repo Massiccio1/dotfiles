@@ -1,15 +1,19 @@
-all:tools-apt install config
+all:install config sync
 
 
-.PHONY: sync dotfiles and .config files
-config:
-	./config.sh
+.PHONY: config isntall update sunc help
+sync:
+	./update-config.sh
 
-.PHONY: install starship oh-zy-zsh and scripts
 install:
 	./install-tools.sh
 
-.PHONY: install apt packages
-tools-apt:
+apt:
 	@echo requires sudo
-	apt install -y git curl trash-cli autojump lsd bat zsh fzf
+	sudo apt install -y git curl trash-cli autojump lsd bat zsh fzf
+
+help:
+	@echo \"make apt\" to install most of the commands used fot aliases
+	@echo \"make install\" install starship zsh and extesions
+	@echo \"make sync\" to sync dotfiles with th repository
+	@echo 

@@ -16,8 +16,15 @@
 # done
 
 function install_staship(){
-    mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
     which starship &> /dev/null && return
+
+    read -p "Install Starship ? [Y/n] " yn
+    case $yn in
+        [Yy] )  ;;
+        [Nn] ) return;;
+        * )  ;;
+    esac
+    mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
     which curl &> /dev/null || (echo curl not found! && exit 1)
     curl https://starship.rs/install.sh -o starship-install.sh
     # chmod +x starship-install.sh
@@ -28,35 +35,43 @@ function install_staship(){
 
 function install_zsh_scripts(){
     which git &> /dev/null || (echo git not found! && exit 1)
+    read -p "Install zsh extensions ? [Y/n] " yn
+    case $yn in
+        [Yy] ) ;;
+        [Nn] ) return ;;
+        * ) ;;
+    esac
     # zsh-autosuggestions
     # zsh-history-substring-search
 
     if [ ! -d "$HOME/.oh-my-zsh" ]; then 
         CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
+    ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
+    if [ -d "$ZSH_CUSTOM" ]; then 
+        echo $ZSH_CUSTOM
+        cd "$ZSH_CUSTOM"
+        echo $(pwd)
 
-    git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    
+        if cd "zsh-history-substring-search"; then git pull; else git clone https://github.com/zsh-users/zsh-history-substring-search; fi;
+        cd "$ZSH_CUSTOM"
+        if cd "zsh-autosuggestions"; then git pull; else git clone  https://github.com/zsh-users/zsh-autosuggestions; fi
+        cd "$ZSH_CUSTOM"
+        if cd "zsh-syntax-highlighting"; then git pull; else git clone https://github.com/zsh-users/zsh-syntax-highlighting.git; fi
+    fi 
     zsh -c "source $HOME/.zshrc"
 }
 
-read -p "Install Starship ? [Y/n] " yn
-case $yn in
-    [Yy] )  install_staship;;
-    [Nn] ) ;;
-    * )  install_staship;;
-esac
+startpwd=$(pwd)
 
-read -p "Install zsh extensions ? [Y/n] " yn
-case $yn in
-    [Yy] ) install_zsh_scripts;;
-    [Nn] )  ;;
-    * ) install_zsh_scripts;;
-esac
 
+install_staship
+
+
+install_zsh_scripts
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-echo "for ${RED} autojump ${NC} refer to: https://github.com/wting/autojump"
+echo "for  autojump refer to: https://github.com/wting/autojump"
+
+cd "$startpwd"
