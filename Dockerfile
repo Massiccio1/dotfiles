@@ -14,4 +14,4 @@ COPY . .
 # RUN make apt
 
 
-# docker build -t dotfiles . --cache-from dotfiles
+# docker build -t dotfiles .

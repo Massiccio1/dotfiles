@@ -20,6 +20,7 @@ alias cp2="/usr/bin/cp"
 alias df="df -h"
 alias du="du -d 1 -h"
 alias mkdir='mkdir -p'
+alias mk="mkdir -p"
 
 alias testa="echo test alias"
 
@@ -67,7 +68,7 @@ alias dockerstart="sudo systemctl start docker.socket && sudo systemctl start do
 alias dockerstop="sudo systemctl stop docker.socket && sudo systemctl stop docker.service"
 alias debian="docker run -d -p 6901:6901 -p 5901:5901 -v $PWD:/shared:ro piopirahl/docker-desktop:1.0.2 && echo http://localhost:6901/"
 alias alpine="docker run -d  -e GROUP_ID=1000 -e USER_ID=1000 -e TZ=Europe/Rome --cap-add SYS_ADMIN --shm-size 2g -p 5801:5800 shokinn/docker-alpine-desktop:latest && echo http://localhost:5800"
-
+alias d="docker"
 
 alias ca="conda activate"
 alias condad="conda deactivate"
@@ -80,6 +81,7 @@ alias dex="docker exec -it"
 
 
 alias h="history"
+alias hg="history | grep2"
 # alias path="echo -e ${PATH//:/\\n}"
 
 path(){
@@ -105,8 +107,20 @@ k(){
     kate $1 2>/dev/null 1>/dev/null & 
 }
 
+cd (){
+	if [ -n "$1" ]; then
+		builtin cd "$@" && ls
+	else
+		builtin cd ~ && ls
+	fi
+}
+
+
+#------------------------------------------
+
 if [ -f ~/.bash_aliases.local ]; then
     . ~/.bash_aliases.local
 fi
+
 
 
