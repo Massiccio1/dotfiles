@@ -82,6 +82,9 @@ alias dcu="docker compose up -d --remove-orphans"
 alias drrmi="docker run --rm -it "
 alias drrm="docker run --rm"
 alias dex="docker exec -it"
+
+
+
 #------------------------------------
 
 
@@ -120,6 +123,20 @@ cd (){
 	fi
 }
 
+# IP address lookup
+function myip()
+{
+	# Internal IP Lookup.
+	INT_IP=$(hostname -I | awk '{print $1}')
+	# INT_IP=$(hostname -I) | awk -F '{print $1}'
+    echo "Internal IP: $INT_IP"
+	# External IP Lookup
+    echo -n "External IP: "
+	EXT_IP=$(curl -s ifconfig.me)
+	echo $EXT_IP
+	unset EXT_IP
+
+}
 
 #------------------------------------------
 
