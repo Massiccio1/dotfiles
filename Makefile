@@ -4,7 +4,7 @@ SUDO=$$(which sudo 2>/dev/null)
 all:apt install sync font
 
 
-.PHONY: config isntall update sunc help test test sudo font sudoers
+.PHONY: config isntall update sunc help test sudo font sudoers
 sync:
 	./update-config.sh
 
@@ -29,3 +29,6 @@ help:
 	@echo \"make font\" to isntall jetbrains nerd font
 	@echo \"make sudoers\" to remove sudo password requirements
 	@echo 
+
+test:
+	./test.sh
