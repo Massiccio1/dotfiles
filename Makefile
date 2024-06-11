@@ -1,10 +1,13 @@
 COMMAND=sudo apt install
 SUDO=$$(which sudo 2>/dev/null)
 
-all:apt install sync font
-
-
 .PHONY: config isntall update sunc help test sudo font sudoers
+
+
+all:apt install sync
+extra: font sudoers
+
+
 sync:
 	./scripts/update-config.sh
 

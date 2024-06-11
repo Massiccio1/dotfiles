@@ -45,7 +45,7 @@ function install_zsh_scripts(){
     # zsh-history-substring-search
 
     if [ ! -d "$HOME/.oh-my-zsh" ]; then 
-        CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        CHSH=yes RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
     ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
     if [ -d "$ZSH_CUSTOM" ]; then 
