@@ -6,10 +6,10 @@ all:apt install sync font
 
 .PHONY: config isntall update sunc help test sudo font sudoers
 sync:
-	./update-config.sh
+	./scripts/update-config.sh
 
 install:
-	./install-tools.sh
+	./scripts/install-tools.sh
 
 .ONESHELL:
 apt:
@@ -17,10 +17,10 @@ apt:
 	@$(SUDO) apt install -y autojump lsd bat
 
 font:
-	./install-font.sh
+	./scripts/install-font.sh
 
 sudoers:
-	./install-sudoers.sh
+	./scripts/install-sudoers.sh
 	
 help:
 	@echo \"make apt\" to install most of the commands used fot aliases
@@ -31,4 +31,4 @@ help:
 	@echo 
 
 test:
-	./test.sh
+	./scripts/test.sh
