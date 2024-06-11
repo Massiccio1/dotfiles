@@ -25,6 +25,4 @@ if [ -f "$HOME/scripts/deltmp.sh" ]; then
     $SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/k99deltmp
 fi
 
-$SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/k99deltmp 
-
 cd ../..
