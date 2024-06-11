@@ -4,7 +4,7 @@ SUDO=$$(which sudo 2>/dev/null)
 all:apt install sync font
 
 
-.PHONY: config isntall update sunc help test test sudo font
+.PHONY: config isntall update sunc help test test sudo font 
 sync:
 	./update-config.sh
 
@@ -13,7 +13,8 @@ install:
 
 .ONESHELL:
 apt:
-	@$(SUDO) apt install -y git curl trash-cli autojump lsd bat zsh
+	@$(SUDO) apt install -y git curl trash-cli zsh unzip 
+	@$(SUDO) apt install -y autojump lsd bat
 
 font:
 	./install-font.sh
