@@ -1,10 +1,10 @@
 COMMAND=sudo apt install
 SUDO=$$(which sudo 2>/dev/null)
 
-all:apt install sync
+all:apt install sync font
 
 
-.PHONY: config isntall update sunc help test test sudo
+.PHONY: config isntall update sunc help test test sudo font
 sync:
 	./update-config.sh
 
@@ -14,6 +14,10 @@ install:
 .ONESHELL:
 apt:
 	@$(SUDO) apt install -y git curl trash-cli autojump lsd bat zsh
+
+font:
+	./install-font.sh
+
 	
 help:
 	@echo \"make apt\" to install most of the commands used fot aliases
