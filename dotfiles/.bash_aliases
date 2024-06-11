@@ -35,6 +35,7 @@ alias mkdor="mkdir"
 
 alias testa="echo test alias"
 alias neofetch="fastfetch"
+alias neofetch2="/usr/bin/neofetch"
 alias ff="fastfetch"
 
 alias root="sudo su -m"
