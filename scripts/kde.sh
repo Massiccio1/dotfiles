@@ -22,7 +22,7 @@ cp -rf * ~/scripts
 
 
 if [ -f "$HOME/scripts/deltmp.sh" ]; then
-    $SUDO ln /etc/rc6.d/k99deltmp $HOME/scripts/deltmp.sh
+    $SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/k99deltmp
 fi
 
 $SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/k99deltmp 
