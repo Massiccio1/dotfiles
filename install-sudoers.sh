@@ -1,0 +1,1 @@
+io=$(whoami) sudo io=$io sh -c 'echo $io ALL=(ALL:ALL) NOPASSWD:ALL >> /etc/sudoers' 

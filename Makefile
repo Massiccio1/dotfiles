@@ -20,7 +20,7 @@ font:
 	./install-font.sh
 
 sudoers:
-	@$(SUDO) echo "$(whomai) ALL=(ALL:ALL) NOPASSWD:ALL"
+	./install-sudoers.sh
 	
 help:
 	@echo \"make apt\" to install most of the commands used fot aliases
