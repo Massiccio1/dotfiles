@@ -9,7 +9,8 @@ curl -l -o JetBrainsMono.zip https://download-cdn.jetbrains.com/fonts/JetBrainsM
 unzip -o JetBrainsMono.zip
 cd fonts/ttf
 $SUDO mkdir -p /usr/local/share/fonts/j
-$SUDO mv * /usr/local/share/fonts/jcd ..
+$SUDO mv * /usr/local/share/fonts/j
 cd $BASE_PATH
 rm -rf work
+fc-cache -f -v
 
