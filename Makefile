@@ -36,4 +36,4 @@ test:
 	./scripts/test.sh
 
 kde:
-	./scripts/kde,sh
+	./scripts/kde.sh
