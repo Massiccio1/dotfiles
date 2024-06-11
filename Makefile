@@ -1,13 +1,13 @@
 COMMAND=sudo apt install
 SUDO=$$(which sudo 2>/dev/null)
 
-.PHONY: config isntall update sunc help test sudo font sudoers
 
 
 all:apt install sync
 extra: font sudoers
 
 
+.PHONY: config isntall update sunc help test sudo font sudoers
 sync:
 	./scripts/update-config.sh
 
@@ -16,7 +16,7 @@ install:
 
 .ONESHELL:
 apt:
-	@$(SUDO) apt install -y git curl trash-cli zsh unzip 
+	@$(SUDO) apt install -y git curl trash-cli zsh unzip nala
 	@$(SUDO) apt install -y autojump lsd bat
 
 font:
