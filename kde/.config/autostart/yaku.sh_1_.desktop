@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/bin/bash /home/massimo/scripts/yaku_split.sh
+GenericName[en_US]=
+GenericName=
+Icon=
+MimeType=
+Name[en_US]=yaku_split.sh
+Name=yaku_split.sh
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,1 @@
+/home/massimo/scripts/deltmp.sh

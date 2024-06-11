@@ -1,0 +1,6 @@
+[Desktop Entry]
+DBusActivatable=true
+Exec=flatpak run --command=kclockd org.kde.kclock
+Name=org.kde.kclock
+Type=Application
+X-Flatpak=org.kde.kclock

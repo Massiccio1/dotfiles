@@ -1,1 +1,1 @@
-sudo  sh -c 'echo $SUDO_USER ALL=\(ALL:ALL\) NOPASSWD:ALL >> /etc/sudoers' 
+sudo  sh -c 'echo $SUDO_USER ALL=\(ALL:ALL\) NOPASSWD:ALL >> /etc/sudoers' || echo "no sudo command, you are ptobably root, no need to set sudoers"
