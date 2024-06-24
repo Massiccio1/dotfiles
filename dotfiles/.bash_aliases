@@ -53,10 +53,7 @@ alias zs="source ~/.zshrc"
 alias cat2="/usr/bin/cat"
 alias cat="batcat -f --paging never "
 
-
-
 alias less="less -FX"
-
 
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll="git log --graph --decorate --color --all"
@@ -92,7 +89,7 @@ alias ports='netstat -tulanp'
 
 alias pserver="python3 -m http.server"
 
-
+alias jobs="jobs -lp"
 
 
 #------------------------------------
@@ -153,6 +150,11 @@ function mk2(){
         return 0
     fi
     mkdir -p $1 && cd $1
+}
+
+function fdroppy(){
+    which droppy &> /dev/null || (echo "install droppy with npm install -g droppy" && return 0)
+    droppy start -f .
 }
 
 #------------------------------------------
