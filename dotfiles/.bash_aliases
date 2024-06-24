@@ -38,6 +38,7 @@ alias mkdir='mkdir -p'
 alias mk="mkdir"
 alias mkdor="mkdir"
 
+
 alias testa="echo test alias"
 alias neofetch="fastfetch"
 alias neofetch2="/usr/bin/neofetch"
@@ -146,6 +147,13 @@ function myip()
 }
 
 
+function mk2(){
+    if [ -z "$1" ];then
+        pass the name of the directory as argument
+        return 0
+    fi
+    mkdir -p $1 && cd $1
+}
 
 #------------------------------------------
 
