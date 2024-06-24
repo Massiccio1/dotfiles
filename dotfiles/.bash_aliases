@@ -136,6 +136,8 @@ function myip()
 	EXT_IP=$(curl -s ifconfig.me)
 	echo $EXT_IP
 	unset EXT_IP
+	unset INT_IP
+
 
 }
 
