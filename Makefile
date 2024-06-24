@@ -4,8 +4,9 @@ SUDO=$$(which sudo 2>/dev/null)
 .PHONY: config isntall update sunc help test sudo font sudoers kde
 
 
-all:apt install sync
-extra: font sudoers
+base:apt install sync
+extra: font sudoers kde
+all: base extra
 
 sync:
 	./scripts/update-config.sh
@@ -30,6 +31,7 @@ help:
 	@echo \"make sync\" to sync dotfiles with th repository
 	@echo \"make font\" to isntall jetbrains nerd font
 	@echo \"make sudoers\" to remove sudo password requirements
+	@echo \"make kde\" copy kde configs and setup systemd Download/delete 
 	@echo 
 
 test:
