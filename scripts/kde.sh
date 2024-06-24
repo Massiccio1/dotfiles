@@ -24,14 +24,21 @@ cp -rf * ~/scripts
 #     $SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/k99deltmp
 # fi
 
-echo "#\!/bin/bash" > $HOME/scripts/deltmp.sh
-echo "/usr/bin/rm -rf $HOME/Downloads/delete/*" >> $HOME/scripts/deltmp.sh
-$SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/K99deltmp
 
+
+# Replace line in delete service
+SEARCH_PATTERN="massimo"
+REPLACEMENT=$(whoami)
+sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/" $HOME/scripts/deltmp2.sh
+
+#create del script
+echo "#!/bin/bash" > $HOME/scripts/deltmp.sh
+echo "/usr/bin/rm -rf $HOME/Downloads/delete/*" >> $HOME/scripts/deltmp.sh
 
 chmod +x  $HOME/scripts/deltmp.sh
 chmod +x  $HOME/scripts/deltmp2.sh
 
+$SUDO rm -rf /etc/systemd/system/deltmp2.service
 $SUDO ln -s $HOME/scripts/deltmp2.sh /etc/systemd/system/deltmp2.service
 $SUDO systemctl daemon-reload
 $SUDO systemctl enable deltmp2.service
