@@ -30,6 +30,7 @@ $SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/K99deltmp
 
 
 chmod +x  $HOME/scripts/deltmp.sh
+chmod +x  $HOME/scripts/deltmp2.sh
 
 $SUDO ln -s $HOME/scripts/deltmp2.sh /etc/systemd/system/deltmp2.service
 $SUDO systemctl daemon-reload
