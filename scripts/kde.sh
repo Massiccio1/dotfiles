@@ -26,10 +26,15 @@ cp -rf * ~/scripts
 
 echo "#\!/bin/bash" > $HOME/scripts/deltmp.sh
 echo "/usr/bin/rm -rf $HOME/Downloads/delete/*" >> $HOME/scripts/deltmp.sh
+$SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/K99deltmp
+
 
 chmod +x  $HOME/scripts/deltmp.sh
 
+$SUDO cp $HOME/scripts/deltmp2.sh /etc/systemd/system/deltmp2.serviceì
+$SUDO systemctl daemon-reload
+$SUDO systemctl enable deltmp2.service
 
-$SUDO ln -s $HOME/scripts/deltmp.sh /etc/rc6.d/K99deltmp
+
 
 cd ../..
