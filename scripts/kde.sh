@@ -32,10 +32,6 @@ REPLACEMENT=$(whoami)
 sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/" $HOME/scripts/deltmp.sh
 sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/" $HOME/scripts/deltmp2.sh
 
-#create del script
-echo "#!/bin/bash" > $HOME/scripts/deltmp.sh
-echo "/usr/bin/rm -rf $HOME/Downloads/delete/*" >> $HOME/scripts/deltmp.sh
-
 chmod +x  $HOME/scripts/deltmp.sh
 chmod +x  $HOME/scripts/deltmp2.sh
 
