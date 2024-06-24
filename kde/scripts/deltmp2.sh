@@ -5,7 +5,7 @@ Before=shutdown.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/massimo/scripts/deltmp2.sh
+ExecStart=/home/massimo/scripts/deltmp.sh
 
 [Install]
-WantedBy=halt.target reboot.target
+WantedBy=halt.target reboot.target  
