@@ -154,7 +154,12 @@ function mk2(){
 
 function fdroppy(){
     which droppy &> /dev/null || (echo "install droppy with npm install -g droppy" && return 0)
+    echo to change to public droppy run droppy-public
     droppy start -f .
+}
+
+function droppy-public(){
+    sed -i 's/"public": false,/"public": true,/' $HOME/.droppy/config/config.json
 }
 
 #------------------------------------------
