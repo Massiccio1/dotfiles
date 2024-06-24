@@ -89,6 +89,9 @@ alias drrm="docker run --rm"
 alias dex="docker exec -it"
 alias ports='netstat -tulanp'
 
+alias pserver="python3 -m http.server"
+
+
 
 
 #------------------------------------
@@ -141,6 +144,8 @@ function myip()
 	EXT_IP=$(curl -s ifconfig.me)
 	echo $EXT_IP
 }
+
+
 
 #------------------------------------------
 
