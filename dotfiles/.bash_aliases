@@ -1,10 +1,15 @@
 alias alais="alias"
 
-alias gbrc="kate ~/.bashrc 2>/dev/null 1>/dev/null &"
-alias gba="kate ~/.bash_aliases   2>/dev/null 1>/dev/null &"
-alias gzrc="kate ~/.zshrc  2>/dev/null 1>/dev/null &"
-#alias k="kate & 2>/dev/nulìl 1>/dev/null"
+alias grep="grep --color=always -i"
+alias grep2="grep -b5 -a5 --color=always -i"
+
+alias gbrc='$EDITOR ~/.bashrc 2>/dev/null 1>/dev/null &'
+alias gba='$EDITOR ~/.bash_aliases   2>/dev/null 1>/dev/null &'
+alias gzrc='$EDITOR ~/.zshrc  2>/dev/null 1>/dev/null &'
+
+#alias k="$EDITOR & 2>/dev/null 1>/dev/null"
 alias ag="alias | grep"
+alias eg="env | grep"
 alias aliaspull="cd $HOME/git/dotfiles && git pull"
 
 
@@ -47,8 +52,7 @@ alias zs="source ~/.zshrc"
 alias cat2="/usr/bin/cat"
 alias cat="batcat -f --paging never "
 
-alias grep="grep --color=always -i"
-alias grep2="grep -b5 -a5 --color=always -i"
+
 
 alias less="less -FX"
 
@@ -83,6 +87,7 @@ alias dcu="docker compose up -d --remove-orphans"
 alias drrmi="docker run --rm -it "
 alias drrm="docker run --rm"
 alias dex="docker exec -it"
+alias ports='netstat -tulanp'
 
 
 
@@ -113,7 +118,7 @@ gitall(){
 }
 
 k(){
-    kate $1 2>/dev/null 1>/dev/null & 
+    $EDITOR $1 2>/dev/null 1>/dev/null & 
 }
 
 cd (){
@@ -135,10 +140,6 @@ function myip()
     echo -n "External IP: "
 	EXT_IP=$(curl -s ifconfig.me)
 	echo $EXT_IP
-	unset EXT_IP
-	unset INT_IP
-
-
 }
 
 #------------------------------------------

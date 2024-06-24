@@ -8,6 +8,12 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export WORDCHARS=${WORDCHARS//[\/]} # remove / from wordchars so that / is a seperator when deleting complete words
 export USER=$(whoami)
 
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='kate'
+fi
+
 # source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 plugins=(
@@ -156,12 +162,7 @@ bindkey '^[[B' history-substring-search-down
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

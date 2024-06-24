@@ -122,6 +122,9 @@ eval "$(starship init bash)"
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+#change in .bash_aliases.local
+export EDITOR=kate
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
