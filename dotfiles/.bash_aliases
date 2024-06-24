@@ -10,7 +10,7 @@ alias gzrc='$EDITOR ~/.zshrc  2>/dev/null 1>/dev/null &'
 #alias k="$EDITOR & 2>/dev/null 1>/dev/null"
 alias ag="alias | grep"
 alias eg="env | grep"
-alias aliaspull="cd $HOME/git/dotfiles && git pull"
+alias aliaspull='OLD=$(pwd) && builtin cd $HOME/git/dotfiles && git pull && builtin cd $OLD'
 
 
 alias sudokate='SUDO_EDITOR=kate sudoedit'
@@ -90,7 +90,6 @@ alias ports='netstat -tulanp'
 alias pserver="python3 -m http.server"
 
 alias jobs="jobs -lp"
-
 
 #------------------------------------
 
