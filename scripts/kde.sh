@@ -29,6 +29,7 @@ cp -rf * ~/scripts
 # Replace line in delete service
 SEARCH_PATTERN="massimo"
 REPLACEMENT=$(whoami)
+sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/" $HOME/scripts/deltmp.sh
 sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/" $HOME/scripts/deltmp2.sh
 
 #create del script
