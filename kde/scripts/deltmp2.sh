@@ -1,11 +1,12 @@
 [Unit]
 Description=Delete temp folder in downloads
 DefaultDependencies=no
-Before=shutdown.target
+After=final.target
 
 [Service]
 Type=oneshot
 ExecStart=/home/massimo/scripts/deltmp.sh
 
+
 [Install]
-WantedBy=halt.target reboot.target  
+WantedBy=final.target
