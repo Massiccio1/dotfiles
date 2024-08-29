@@ -33,7 +33,9 @@ alias cp="cp -r"
 alias cp2="/usr/bin/cp"
 
 alias df="df -h"
-alias du="du -d 1 -h"
+# alias du="du -d 1 -h"+
+#du2 in functions
+
 alias mkdir='mkdir -p'
 alias mk="mkdir"
 alias mkdor="mkdir"
@@ -63,6 +65,8 @@ alias gs="git status"
 alias snu="sudo nala update"
 alias sni="sudo nala install -y"
 alias sns="sudo nala search "
+
+alias p3="python3"
 
 alias mntu="sudo mount /dev/nvme0n1p4 /mnt/u20"
 alias mntw="sudo mount /dev/nvme0n1p3 /mnt/windows"
@@ -101,7 +105,6 @@ alias hg="history | grep2"
 path(){
     echo -e ${PATH//:/\\n}
 }
-
 
 
 gitall(){
@@ -161,11 +164,28 @@ function droppy-public(){
     sed -i 's/"public": false,/"public": true,/' $HOME/.droppy/config/config.json
 }
 
+function du2(){
+    du -h -d 1 |
+    awk '{printf "%s %08.2f\t%s\n",
+        index("KMG", substr($1, length($1))),
+        substr($1, 0, length($1)-1), $0}' |
+    sort -r | cut -f2,3
+}
+
+function du3(){
+    sudo du -h -d 1 |
+    awk '{printf "%s %08.2f\t%s\n",
+        index("KMG", substr($1, length($1))),
+        substr($1, 0, length($1)-1), $0}' |
+    sort -r | cut -f2,3
+}
+
 #------------------------------------------
 
 if [ -f ~/.bash_aliases.local ]; then
     . ~/.bash_aliases.local
 fi
+
 
 
 
