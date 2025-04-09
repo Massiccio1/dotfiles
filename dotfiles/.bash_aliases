@@ -78,6 +78,9 @@ alias f2="ll | grep2 "
 
 alias dockerstart="sudo systemctl start docker.socket && sudo systemctl start docker.service"
 alias dockerstop="sudo systemctl stop docker.socket && sudo systemctl stop docker.service"
+alias dockerdisable="sudo systemctl disable docker.socket && sudo systemctl start docker.service"
+alias dockerenable="sudo systemctl enable docker.socket && sudo systemctl stop docker.service"
+
 alias debian="docker run -d -p 6901:6901 -p 5901:5901 -v $PWD:/shared:ro piopirahl/docker-desktop:1.0.2 && echo http://localhost:6901/"
 alias alpine="docker run -d  -e GROUP_ID=1000 -e USER_ID=1000 -e TZ=Europe/Rome --cap-add SYS_ADMIN --shm-size 2g -p 5801:5800 shokinn/docker-alpine-desktop:latest && echo http://localhost:5800"
 alias d="docker"
