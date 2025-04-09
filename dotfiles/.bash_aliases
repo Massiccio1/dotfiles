@@ -33,8 +33,8 @@ alias cp="cp -r"
 alias cp2="/usr/bin/cp"
 
 alias df="df -h"
-# alias du="du -d 1 -h"+
-#du2 in functions
+alias du="du -ad 1 -h | sort -h"
+alias du2="/usr/bin/du"
 
 alias mkdir='mkdir -p'
 alias mk="mkdir"
@@ -65,6 +65,7 @@ alias gs="git status"
 alias snu="sudo nala update"
 alias sni="sudo nala install -y"
 alias sns="sudo nala search "
+alias snr="sudo nala remove "
 
 alias p3="python3"
 
@@ -73,7 +74,6 @@ alias mntw="sudo mount /dev/nvme0n1p3 /mnt/windows"
 alias mntd="sudo mount /dev/nvme0n1p8 /mnt/deb"
 
 alias dol="dolphin .  2>/dev/null 1>/dev/null &"
-alias f="ll | grep "
 alias f2="ll | grep2 "
 
 alias dockerstart="sudo systemctl start docker.socket && sudo systemctl start docker.service"
@@ -81,19 +81,36 @@ alias dockerstop="sudo systemctl stop docker.socket && sudo systemctl stop docke
 alias debian="docker run -d -p 6901:6901 -p 5901:5901 -v $PWD:/shared:ro piopirahl/docker-desktop:1.0.2 && echo http://localhost:6901/"
 alias alpine="docker run -d  -e GROUP_ID=1000 -e USER_ID=1000 -e TZ=Europe/Rome --cap-add SYS_ADMIN --shm-size 2g -p 5801:5800 shokinn/docker-alpine-desktop:latest && echo http://localhost:5800"
 alias d="docker"
+alias dub="docker run -it -v .:/test ubuntu:24.10 bash"
 
 alias ca="conda activate"
 alias condad="conda deactivate"
 
 alias dcu="docker compose up -d --remove-orphans"
+alias dcd="docker compose down"
+alias dcr="docker compose restart"
+
+
 alias drrmi="docker run --rm -it "
 alias drrm="docker run --rm"
-alias dex="docker exec -it"
+alias dex2="docker exec -it"
 alias ports='netstat -tulanp'
 
 alias pserver="python3 -m http.server"
 
 alias jobs="jobs -lp"
+
+alias db="dbeaver 1>/dev/null 2>&1 &"
+
+
+alias xampp="sudo /opt/lampp/lampp "
+alias xampp2="sudo /opt/lampp/manager-linux-x64.run"
+
+alias xfreerdp="wlfreerdp /dynamic-resolution "
+
+alias t="task"
+alias tl="task all"
+
 
 #------------------------------------
 
@@ -164,13 +181,6 @@ function droppy-public(){
     sed -i 's/"public": false,/"public": true,/' $HOME/.droppy/config/config.json
 }
 
-function du2(){
-    du -h -d 1 |
-    awk '{printf "%s %08.2f\t%s\n",
-        index("KMG", substr($1, length($1))),
-        substr($1, 0, length($1)-1), $0}' |
-    sort -r | cut -f2,3
-}
 
 function du3(){
     sudo du -h -d 1 |
@@ -178,6 +188,26 @@ function du3(){
         index("KMG", substr($1, length($1))),
         substr($1, 0, length($1)-1), $0}' |
     sort -r | cut -f2,3
+}
+function f(){
+    find_string=$1
+    find_string+="*"
+    find . -name "$find_string"
+}
+
+function dex(){
+    container_id=$1
+    docker exec -it $container_id bash
+}
+
+ta(){
+    task add $@
+    task list
+}
+
+td(){
+    task $1 done
+    task list
 }
 
 #------------------------------------------

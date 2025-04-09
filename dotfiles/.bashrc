@@ -162,3 +162,4 @@ unset __conda_setup
 fi
 # <<< conda initialize <<<
 
+export PATH="$PATH:/opt/mssql-tools18/bin"
