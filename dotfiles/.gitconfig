@@ -1,8 +1,8 @@
 [init]
-	defaultBranch = main
+	defaultBranch = master
 [user]
-	name = Massimo Girardelli
-	email = massimo.girardelli@starsystem.biz
+	name = Massiccio1
+	email = girardellimassimo@gmail.com
 [safe]
 	directory = /shared
 [core]
@@ -29,8 +29,3 @@
 	lf = log --pretty=lf --graph
 	ls = log --pretty=lf --graph --cc --stat
 	ll = log --pretty=lf --graph --cc --patch
-[credential]
-	helper = 
-	helper = /usr/local/bin/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
