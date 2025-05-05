@@ -1,4 +1,5 @@
 alias alais="alias"
+alias bahs="bash "
 
 alias grep="grep --color=always -i"
 alias grep2="grep -b5 -a5 --color=always -i"
@@ -16,6 +17,7 @@ alias aliaspull='OLD=$(pwd) && builtin cd $HOME/git/dotfiles && git pull && buil
 alias sudokate='SUDO_EDITOR=kate sudoedit'
 
 alias ll='lsd -alFh'
+alias lll='cl && lsd -alFh'
 alias la='lsd -A'
 alias l='lsd -F'
 alias lsr="lsd -R"
@@ -52,8 +54,10 @@ alias cls="clear"
 alias cl="clear"
 alias s="source ~/.bashrc"
 alias zs="source ~/.zshrc"
-alias cat2="/usr/bin/cat"
 alias cat="batcat -f --paging never "
+alias cat2="/usr/bin/cat"
+alias cat3="cl && cat"
+
 
 alias less="less -FX"
 
