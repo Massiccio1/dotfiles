@@ -29,8 +29,6 @@ function install_staship(){
 
 function install_zsh_scripts(){
     which git &> /dev/null || (echo git not found! && exit 1)
-    read -p "Install zsh extensions ? [Y/n] " yn
-
     # zsh-autosuggestions
     # zsh-history-substring-search
 
