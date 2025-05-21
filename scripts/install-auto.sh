@@ -57,7 +57,6 @@ function install_fastfetch(){
     if [ "$(whoami)" != "root" ]; then 
         SUDO=sudo
     fi
-    read -p "Install fastfetch ? [Y/n] " yn
 
     curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb && \
     $SUDO chown _apt fastfetch-linux-amd64.deb && \ 
