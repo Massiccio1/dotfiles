@@ -28,6 +28,7 @@ function install_staship(){
     if [ "$(whoami)" != "root" ]; then 
         SUDO=sudo
     fi
+    echo "installing starship"
 
     $SUDO sh starship-install.sh -y
     echo "starship ok"
