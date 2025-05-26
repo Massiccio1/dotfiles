@@ -67,7 +67,7 @@ RUN echo "export USER=$(whoami)">>.bashrc
 RUN ls
 RUN mkdir -p /home/test/git
 WORKDIR  /home/test/git
-ENV a=21
+ENV a=22
 RUN git clone --depth 1 https://github.com/Massiccio1/dotfiles.git
 WORKDIR  /home/test/git/dotfiles
 COPY Dockerfile /tmp 
