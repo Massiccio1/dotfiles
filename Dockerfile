@@ -69,7 +69,7 @@ RUN mkdir -p /home/test/git
 WORKDIR  /home/test/git
 RUN git clone https://github.com/Massiccio1/dotfiles.git
 WORKDIR  /home/test/git/dotfiles
-RUN make auto
+# RUN make auto
 
 # COPY . . 
 

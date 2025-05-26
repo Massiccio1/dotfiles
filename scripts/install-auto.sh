@@ -15,6 +15,11 @@
 #     fi
 # done
 
+unset SUDO
+if [ "$(whoami)" != "root" ]; then 
+    SUDO=sudo
+fi
+
 function install_staship(){
     which starship &> /dev/null && return
 
@@ -33,7 +38,7 @@ function install_zsh_scripts(){
     # zsh-history-substring-search
 
     if [ ! -d "$HOME/.oh-my-zsh" ]; then 
-        CHSH=yes RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
     ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
     if [ -d "$ZSH_CUSTOM" ]; then 
@@ -53,10 +58,10 @@ function install_zsh_scripts(){
 
 function install_fastfetch(){
     which fastfetch 1>/dev/null 2>/dev/null && return
-    unset SUDO
-    if [ "$(whoami)" != "root" ]; then 
-        SUDO=sudo
-    fi
+    # unset SUDO
+    # if [ "$(whoami)" != "root" ]; then 
+    #     SUDO=sudo
+    # fi
 
     curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb && \
     $SUDO chown _apt fastfetch-linux-amd64.deb && \ 
