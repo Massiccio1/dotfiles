@@ -74,9 +74,6 @@ function install_fastfetch(){
 }
 # install
 
-function font(){
-    
-}
 
 
 startpwd=$(pwd)
