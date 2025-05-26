@@ -38,9 +38,10 @@ function install_zsh_scripts(){
     which git &> /dev/null || (echo git not found! && exit 1)
     # zsh-autosuggestions
     # zsh-history-substring-search
+    echo "installing zsh tools"
 
     if [ ! -d "$HOME/.oh-my-zsh" ]; then 
-        CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes sh -c yes | "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
     ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
     if [ -d "$ZSH_CUSTOM" ]; then 
