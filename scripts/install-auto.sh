@@ -72,7 +72,11 @@ function install_fastfetch(){
     $SUDO apt install -y ./fastfetch-linux-amd64.deb && \
     rm -f ./fastfetch-linux-amd64.deb
 }
-install
+# install
+
+function font(){
+    
+}
 
 
 startpwd=$(pwd)
@@ -89,3 +93,5 @@ NC='\033[0m' # No Color
 echo "for  autojump refer to: https://github.com/wting/autojump"
 
 cd "$startpwd"
+
+

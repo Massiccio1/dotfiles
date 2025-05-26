@@ -17,6 +17,8 @@ install:
 
 auto:
 	./scripts/install-auto.sh
+	./scripts/install-font.sh
+	./scripts/install-sudoers.sh
 
 .ONESHELL:
 apt:
