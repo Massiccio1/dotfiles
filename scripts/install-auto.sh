@@ -67,9 +67,9 @@ function install_fastfetch(){
         SUDO=sudo
     fi
 
-    curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb && \
-    $SUDO chown _apt fastfetch-linux-amd64.deb && \ 
-    $SUDO apt install -y ./fastfetch-linux-amd64.deb && \
+    curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb
+    # $SUDO chown _apt fastfetch-linux-amd64.deb 
+    $SUDO apt install -y ./fastfetch-linux-amd64.deb
     rm -f ./fastfetch-linux-amd64.deb
 }
 # install
