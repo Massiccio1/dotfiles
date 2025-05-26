@@ -22,22 +22,23 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 function install_staship(){
-    which starship &> /dev/null && return
+    # which starship &> /dev/null && return
 
-    mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
-    which curl &> /dev/null || (echo curl not found! && exit 1)
-    # curl https://starship.rs/install.sh -o starship-install.sh
-    curl -sS https://starship.rs/install.sh | $SUDO sh -s -- --yes
-    # chmod +x starship-install.sh
-    # echo yes | ./starship-install.sh 
+    # mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
+    # which curl &> /dev/null || (echo curl not found! && exit 1)
+    # # curl https://starship.rs/install.sh -o starship-install.sh
+    # curl -sS https://starship.rs/install.sh | $SUDO sh -s -- --yes
+    # # chmod +x starship-install.sh
+    # # echo yes | ./starship-install.sh 
 
-    echo "installing starship"
+    # echo "installing starship"
 
-    echo sudo: $SUDO
+    # echo sudo: $SUDO
 
-    $SUDO sh starship-install.sh --yes
-    echo "starship ok"
-    rm starship-install.sh
+    # # $SUDO sh starship-install.sh --yes
+    # echo "starship ok"
+    # rm starship-install.sh
+    $SUDO apt isntall starship
 }
 
 function install_zsh_scripts(){
@@ -65,18 +66,18 @@ function install_zsh_scripts(){
 }
 
 
-function install_fastfetch(){
-    which fastfetch 1>/dev/null 2>/dev/null && return
-    unset SUDO
-    if [ "$(whoami)" != "root" ]; then 
-        SUDO=sudo
-    fi
+# function install_fastfetch(){
+#     which fastfetch 1>/dev/null 2>/dev/null && return
+#     unset SUDO
+#     if [ "$(whoami)" != "root" ]; then 
+#         SUDO=sudo
+#     fi
 
-    curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb
-    # $SUDO chown _apt fastfetch-linux-amd64.deb 
-    $SUDO apt install -y ./fastfetch-linux-amd64.deb
-    rm -f ./fastfetch-linux-amd64.deb
-}
+#     curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb
+#     # $SUDO chown _apt fastfetch-linux-amd64.deb 
+#     $SUDO apt install -y ./fastfetch-linux-amd64.deb
+#     rm -f ./fastfetch-linux-amd64.deb
+# }
 # install
 
 function install_font(){
@@ -124,14 +125,14 @@ install_staship
 
 install_zsh_scripts
 
-install_fastfetch
+# install_fastfetch
 
 install_font
 
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-echo "for  autojump refer to: https://github.com/wting/autojump"
+# echo "for  autojump refer to: https://github.com/wting/autojump"
 
 cd "$startpwd"
 

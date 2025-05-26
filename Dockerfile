@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 as setup
+FROM debian:trixie as setup
 
 
 RUN apt update -y
@@ -48,7 +48,7 @@ RUN nala update
 
 RUN nala install -y git curl trash-cli autojump lsd bat zsh make
 
-RUN nala install -y neofetch git nodejs \
+RUN nala install -y fastfetch git nodejs \
     python-is-python3 python3-pip \
     nano vim
 
@@ -67,7 +67,7 @@ RUN echo "export USER=$(whoami)">>.bashrc
 RUN ls
 RUN mkdir -p /home/test/git
 WORKDIR  /home/test/git
-ENV a=13
+ENV a=14
 RUN git clone https://github.com/Massiccio1/dotfiles.git
 WORKDIR  /home/test/git/dotfiles
 # RUN make auto
