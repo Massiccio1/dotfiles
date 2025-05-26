@@ -23,7 +23,7 @@ function install_staship(){
     curl https://starship.rs/install.sh -o starship-install.sh
     # chmod +x starship-install.sh
     # echo yes | ./starship-install.sh 
-    sh starship-install.sh -y
+    $SUDO sh starship-install.sh -y
     rm starship-install.sh
 }
 
