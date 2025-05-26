@@ -1,7 +1,7 @@
 COMMAND=sudo apt install
 SUDO=$$(which sudo 2>/dev/null)
 
-.PHONY: config install update sunc help test sudo font sudoers kde
+.PHONY: config install update sunc help test sudo font sudoers kde auto
 
 
 base:apt install sync
