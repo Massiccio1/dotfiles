@@ -78,7 +78,6 @@ startpwd=$(pwd)
 
 install_staship
 
-
 install_zsh_scripts
 
 install_fastfetch
