@@ -15,7 +15,7 @@ function install_zsh_scripts(){
     # zsh-history-substring-search
     echo "installing zsh tools"
 
-    CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes     sh ./installers/omz.sh
+    CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes     sh  ./installers/omz.sh
 
     ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
     if [ -d "$ZSH_CUSTOM" ]; then 
