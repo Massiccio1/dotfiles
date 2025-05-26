@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$HOME/.local/sbin:$HOME/scripts:./
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.local/bin:$HOME/.local/sbin:/usr/local/go/bin:$HOME/scripts:./
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export WORDCHARS=${WORDCHARS//[\/]} # remove / from wordchars so that / is a seperator when deleting complete words

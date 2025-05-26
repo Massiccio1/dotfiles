@@ -15,3 +15,5 @@ COPY . .
 
 
 # docker build -t dotfiles .
+# docker run --rm -it dotfiles bash
+# run make

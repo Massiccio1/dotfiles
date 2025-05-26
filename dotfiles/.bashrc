@@ -99,8 +99,7 @@ fi
 
 
 export USER=$(whoami)
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/$HOME/.local/bin:/$HOME/.local/sbin:/$HOME/scripts
-
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/$HOME/.local/bin:/$HOME/.local/sbin:/usr/local/go/bin:/$HOME/scripts
 
 
 if [ -f /usr/share/autojump/autojump.bash ]; then
