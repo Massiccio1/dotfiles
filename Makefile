@@ -8,11 +8,15 @@ base:apt install sync
 extra: font sudoers kde
 all: base extra
 
+
 sync:
 	./scripts/update-config.sh
 
 install:
 	./scripts/install-tools.sh
+
+auto:
+	./scripts/install-auto.sh
 
 .ONESHELL:
 apt:
