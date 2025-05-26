@@ -15,20 +15,25 @@
 #     fi
 # done
 
+
+unset SUDO
+if [ "$(whoami)" != "root" ]; then 
+    export SUDO=sudo
+fi
+
 function install_staship(){
     which starship &> /dev/null && return
 
     mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
     which curl &> /dev/null || (echo curl not found! && exit 1)
-    curl https://starship.rs/install.sh -o starship-install.sh
+    # curl https://starship.rs/install.sh -o starship-install.sh
+    curl -sS https://starship.rs/install.sh | $SUDO sh -s -- --yes
     # chmod +x starship-install.sh
     # echo yes | ./starship-install.sh 
 
-    unset SUDO
-    if [ "$(whoami)" != "root" ]; then 
-        SUDO=sudo
-    fi
     echo "installing starship"
+
+    echo sudo: $SUDO
 
     $SUDO sh starship-install.sh --yes
     echo "starship ok"
