@@ -6,7 +6,7 @@ fi
 
 function install_staship(){
     
-    $SUDO apt install starship
+    $SUDO apt install starship -y
 }
 
 function install_zsh_scripts(){
