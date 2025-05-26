@@ -7,8 +7,8 @@ RUN apt update
 RUN apt install -y git curl trash-cli autojump lsd bat zsh make
 RUN apt install -y make
 
-RUN curl https://starship.rs/install.sh -o starship-install.sh
-RUN sh starship-install.sh -y
+# RUN curl https://starship.rs/install.sh -o starship-install.sh
+# RUN sh starship-install.sh -y
 
 COPY . .
 # RUN make apt
