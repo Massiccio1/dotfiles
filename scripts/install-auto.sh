@@ -106,6 +106,10 @@ function install_font(){
 
 }
 
+function install_sudoers(){
+
+    $SUDO  sh -c 'echo $SUDO_USER ALL=\(ALL:ALL\) NOPASSWD:ALL >> /etc/sudoers' || echo "no sudo command, you are probably root, no need to set sudoers"
+}
 
 
 startpwd=$(pwd)
