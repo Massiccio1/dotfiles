@@ -30,6 +30,7 @@ function install_staship(){
     fi
 
     $SUDO sh starship-install.sh -y
+    echo "starship ok"
     rm starship-install.sh
 }
 
