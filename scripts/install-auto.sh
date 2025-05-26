@@ -15,11 +15,6 @@
 #     fi
 # done
 
-unset SUDO
-if [ "$(whoami)" != "root" ]; then 
-    SUDO=sudo
-fi
-
 function install_staship(){
     which starship &> /dev/null && return
 
@@ -28,6 +23,12 @@ function install_staship(){
     curl https://starship.rs/install.sh -o starship-install.sh
     # chmod +x starship-install.sh
     # echo yes | ./starship-install.sh 
+
+    unset SUDO
+    if [ "$(whoami)" != "root" ]; then 
+        SUDO=sudo
+    fi
+
     $SUDO sh starship-install.sh -y
     rm starship-install.sh
 }
@@ -58,10 +59,10 @@ function install_zsh_scripts(){
 
 function install_fastfetch(){
     which fastfetch 1>/dev/null 2>/dev/null && return
-    # unset SUDO
-    # if [ "$(whoami)" != "root" ]; then 
-    #     SUDO=sudo
-    # fi
+    unset SUDO
+    if [ "$(whoami)" != "root" ]; then 
+        SUDO=sudo
+    fi
 
     curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb && \
     $SUDO chown _apt fastfetch-linux-amd64.deb && \ 
