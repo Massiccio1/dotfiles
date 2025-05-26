@@ -1,20 +1,3 @@
-#!/bin/bash
-
-# declare -A osInfo;
-# osInfo[/etc/redhat-release]=yum
-# osInfo[/etc/arch-release]=pacman
-# osInfo[/etc/gentoo-release]=emerge
-# osInfo[/etc/SuSE-release]=zypp
-# osInfo[/etc/debian_version]=apt-get
-# osInfo[/etc/alpine-release]=apk
-
-# for f in ${!osInfo[@]}
-# do
-#     if [[ -f $f ]];then
-#         echo Package manager: ${osInfo[$f]}
-#     fi
-# done
-
 
 unset SUDO
 if [ "$(whoami)" != "root" ]; then 
@@ -22,22 +5,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 function install_staship(){
-    # which starship &> /dev/null && return
-
-    # mkdir -p $HOME/.cargo && touch $HOME/.cargo/env
-    # which curl &> /dev/null || (echo curl not found! && exit 1)
-    # # curl https://starship.rs/install.sh -o starship-install.sh
-    # curl -sS https://starship.rs/install.sh | $SUDO sh -s -- --yes
-    # # chmod +x starship-install.sh
-    # # echo yes | ./starship-install.sh 
-
-    # echo "installing starship"
-
-    # echo sudo: $SUDO
-
-    # # $SUDO sh starship-install.sh --yes
-    # echo "starship ok"
-    # rm starship-install.sh
+    
     $SUDO apt isntall starship
 }
 
@@ -47,9 +15,8 @@ function install_zsh_scripts(){
     # zsh-history-substring-search
     echo "installing zsh tools"
 
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then 
-        CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes sh -c yes | "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    fi
+    CHSH=yes RUNZSH=yes KEEP_ZSHRC=yes     sh ./installers/omz.sh
+
     ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins/
     if [ -d "$ZSH_CUSTOM" ]; then 
         echo $ZSH_CUSTOM
@@ -65,37 +32,12 @@ function install_zsh_scripts(){
     zsh -c "source $HOME/.zshrc"
 }
 
-
-# function install_fastfetch(){
-#     which fastfetch 1>/dev/null 2>/dev/null && return
-#     unset SUDO
-#     if [ "$(whoami)" != "root" ]; then 
-#         SUDO=sudo
-#     fi
-
-#     curl -OL https://github.com/fastfetch-cli/fastfetch/releases/download/2.15.0/fastfetch-linux-amd64.deb
-#     # $SUDO chown _apt fastfetch-linux-amd64.deb 
-#     $SUDO apt install -y ./fastfetch-linux-amd64.deb
-#     rm -f ./fastfetch-linux-amd64.deb
-# }
-# install
-
 function install_font(){
 
     $SUDO apt install -y unzip fontconfig
     BASE_PATH=$(pwd)
     mkdir -p work
     cd work
-
-    # curl -L -o JetBrainsMono.zip https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip
-    # unzip -o JetBrainsMono.zip
-    # cd fonts/ttf
-    # $SUDO mkdir -p /usr/local/share/fonts/j
-    # $SUDO mv * /usr/local/share/fonts/j
-
-
-
-    #now firamono
 
     curl -L -o FiraMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.zip"
     unzip FiraMono.zip
@@ -108,7 +50,6 @@ function install_font(){
     cd $BASE_PATH
     rm -rf work
     fc-cache -f -v
-
 
 }
 
@@ -125,10 +66,7 @@ install_staship
 
 install_zsh_scripts
 
-# install_fastfetch
-
 install_font
-
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color

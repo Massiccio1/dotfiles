@@ -70,11 +70,11 @@ WORKDIR  /home/test/git
 ENV a=14
 RUN git clone https://github.com/Massiccio1/dotfiles.git
 WORKDIR  /home/test/git/dotfiles
-# RUN make auto
+RUN make auto
 
 # COPY . . 
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "/bin/zsh" ]
 
 
 

@@ -17,6 +17,7 @@ install:
 
 auto:
 	./scripts/install-auto.sh
+	yes '' | ./scripts/install-config.sh
 
 
 .ONESHELL:
